@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^vrni/([0-9]*)$ vrni.php?id=$1 [NC,QSA]
+RewriteRule ^brisi/([0-9]*)$ brisi.php?id=$1 [NC,QSA]
+RewriteRule ^dodaj/([0-9]*)$ dodaj.php?id=$1 [NC,QSA]
