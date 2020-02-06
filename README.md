@@ -7,7 +7,7 @@ Vpisna št.: 35180128
 
 Uporaba z priloženo bazo customers.sql je sledeča:
 
-Za prikaz vseh podatkov iz baze vpišemo v ukazno vrstico ukaz: \newline
+Za prikaz vseh podatkov iz baze vpišemo v ukazno vrstico ukaz: <br> </br>
 `curl -i -X GET http://127.0.0.1/vrni/` - 127.0.0.1 je ip naslov strežnika baze podatkov.
 
 Za prikaz po določenem ID ju osebe vpišemo ukaz: 
