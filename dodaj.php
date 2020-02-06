@@ -7,6 +7,7 @@ $id = (isset($_GET) && isset($_GET['id'])) ? $_GET['id'] : null;
 $metoda = $_SERVER["REQUEST_METHOD"];
 if($metoda == "POST") {
     if(is_numeric($id)){
+        echo "Id can not be used !";
         header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
         die();
     }
@@ -22,10 +23,15 @@ if($metoda == "POST") {
         $sql->execute();
         echo "New INSERT INTO DB successful ! \n";
     }
+    else {
+        echo "Something went wrong ! \n";
+        header($_SERVER["SERVER_PROTOCOL"] . " 404 Something Went Wrong");
+        die();
+    }
 }
 else {
-    echo "Something went wrong ! \n";
-    header($_SERVER["SERVER_PROTOCOL"] . " 404 Something Went Wrong");
+    echo "You can only use POST method ! \n";
+    header($_SERVER["SERVER_PROTOCOL"] . " 404 Wrong Method");
     die();
 }
 $conn->close();

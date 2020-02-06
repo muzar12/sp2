@@ -15,10 +15,18 @@ if($metoda == "GET") {
         $sql->bind_param("i", $id);
         $sql->execute();
         $result = $sql->get_result();
-		echo "[";
-        echo json_encode($result->fetch_assoc());
-		echo "]";
+        $out = json_encode($result->fetch_assoc());
+        if ($out != "null"){
+            echo "[";
+            echo $out;
+            echo "]";
         }
+        else{
+            echo "Wrong ID ! \n";
+            header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
+            die();
+        }
+    }
     if(is_numeric($id) == false) {
         $sql = $conn->prepare("SELECT * FROM customers");
         if(!$sql){
@@ -26,12 +34,12 @@ if($metoda == "GET") {
         }
         $sql->execute();
         $result = $sql->get_result();
-		echo "[";
-        for ($i=0;$i<mysqli_num_rows($result);$i++) {
+        echo "[";
+        for ($i = 0; $i < mysqli_num_rows($result); $i++) {
             echo json_encode($result->fetch_assoc());
-			if ($i != (mysqli_num_rows($result)-1)){
-				echo ",";
-			}
+            if ($i != (mysqli_num_rows($result) - 1)) {
+                echo ",";
+            }
         } echo "]";
     }
 }
@@ -56,10 +64,21 @@ elseif($metoda == "PUT") {
 
             echo "DATA changed successfully ! \n";
         }
+        else{
+            echo "Something went wrong ! \n";
+            header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
+            die();
+        }
     }
+    else{
+        echo "Something went wrong ! \n";
+        header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
+        die();
+    }
+
 }
 else{
-    echo "Something went wrong ! \n";
+    echo "Wrong method used ! \n";
     header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
     die();
 }

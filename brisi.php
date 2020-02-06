@@ -17,5 +17,10 @@ if($metoda == "DELETE") {
         die();
     }
 }
+else {
+    echo "You can only use DELETE method ! \n";
+    header($_SERVER["SERVER_PROTOCOL"] . " 404 Wrong Method");
+    die();
+}
 $conn->close();
 ?>
