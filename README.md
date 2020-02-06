@@ -1,7 +1,7 @@
 # sp2
-Spletno programiranje 2
-Projektna naloga
-35180128
+Spletno programiranje 2,
+Projektna naloga, 
+Vpisna št.: 35180128
 
 .htaccess datoteka je prikazana kot htaccess.txt
 
