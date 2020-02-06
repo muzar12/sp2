@@ -11,7 +11,7 @@ Za prikaz vseh podatkov iz baze vpišemo v ukazno vrstico ukaz:
 `curl -i -X GET http://127.0.0.1/vrni/` - 127.0.0.1 je ip naslov strežnika baze podatkov.
 
 Za prikaz po določenem ID ju osebe vpišemo ukaz: 
-`curl -i -X GET http://127.0.0.1/vrni/1` - /1 predstavlja ID = 1
+`curl -i -X GET http://127.0.0.1/vrni/1` - /1 predstavlja osebo z ID = 1
 
 Za posodobitev podatkov določene osebe potrebujemo njegov ID.
 Posodobitev se izvede z ukazom:
@@ -20,7 +20,7 @@ V tem primeru se izvede posodobitev osebe z ID = 1, spremenimo ga v ime Boris, p
 
 Za izbris določene osebe iz baze potrebujemo njegov ID.
 Izbris se izvede z ukazom: 
-`curl -i -X DELETE http://127.0.0.1/brisi/1`
+`curl -i -X DELETE http://127.0.0.1/brisi/1` - /1 predstavlja osebo z ID = 1
 
 Za dodajanje nove osebe v bazo uporabimo ukaz:
 `curl -i -d "ime=Mirko&priimek=Pucibabic&rating=6&starost=46" -X POST http://127.0.0.1/dodaj/`
