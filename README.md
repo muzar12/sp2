@@ -7,6 +7,7 @@ Projektna naloga
 
 Uporaba z priloženo bazo customers.sql je sledeča:
 
-za prikaz vseh podatkov vpišemo 
+za prikaz vseh podatkov vpišemo v ukazno vrstico: 
 
-Jutri še uredim do konca exceptione, in spišem navodila za uporabo.
+
+
