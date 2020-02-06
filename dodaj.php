@@ -1,19 +1,7 @@
 <?php
 session_start();
 error_reporting(E_ALL);
-
-$hostname = "localhost";
-$username = "Muzar";
-$password = "geslogeslo123";
-$dbName = "faks";
-
-$conn = new mysqli($hostname, $username, $password, $dbName);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-//echo "Connection successful ! \n";
-
+include ("connection.php");
 $id = (isset($_GET) && isset($_GET['id'])) ? $_GET['id'] : null;
 //curl -i -d "ime=Boris&priimek=Finc&rating=4&starost=21" -X POST http://127.0.0.1/dodaj/
 $metoda = $_SERVER["REQUEST_METHOD"];
@@ -22,7 +10,6 @@ if($metoda == "POST") {
         header($_SERVER["SERVER_PROTOCOL"]." 406 Not Acceptable");
         die();
     }
-
     parse_str(file_get_contents('php://input'), $podatki);
     $ime = (isset($podatki['ime'])) ? $podatki['ime'] : null;
     $priimek = (isset($podatki['priimek'])) ? $podatki['priimek'] : null;
