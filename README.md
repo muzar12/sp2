@@ -16,6 +16,7 @@ Za prikaz po določenem ID ju osebe vpišemo ukaz:
 Za posodobitev podatkov določene osebe potrebujemo njegov ID.
 Posodobitev se izvede z ukazom:
 `curl -i -d "ime=Boris&priimek=Finc&rating=4&starost=21" -X PUT http://127.0.0.1/vrni/1`
+
 V tem primeru se izvede posodobitev osebe z ID = 1, spremenimo ga v ime Boris, priimek Finc, z ratingom 4, starostjo 21.
 
 Za izbris določene osebe iz baze potrebujemo njegov ID.
